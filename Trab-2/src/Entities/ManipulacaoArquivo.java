@@ -32,6 +32,8 @@ public class ManipulacaoArquivo {
             fw.close();
         } catch(IOException e) {
             e.printStackTrace();
+        } catch(Exception e){
+            System.out.println("Ops... aconteceu algum erro.");
         }
     }
 
