@@ -16,11 +16,10 @@ public class Notas extends Disciplina {
     }
 
     public boolean AdicionarAluno(String gabarito, String nomeAluno, String disciplina){
-        arquivos.escreverConteudo(gabarito, nomeAluno, disciplina);
-        return false;
+        return arquivos.escreverConteudo(gabarito, nomeAluno, disciplina);
     }
 
-    public boolean gerarResultado(String gabarito, String disciplina){
+    public void gerarResultado(String gabarito, String disciplina){
         double mediaNotas=0, somaNotas=0;
         ArrayList<String> prova = arquivos.lerProva(disciplina);
         ArrayList<String> notas = new ArrayList<>(); 
@@ -91,8 +90,6 @@ public class Notas extends Disciplina {
             arquivos.escreverConteudo(prova2.get(i),"\t" + notas2.get(i), disciplina + "ResultadoNotas");
 
         arquivos.escreverConteudo(disciplina + "ResultadoNotas", "Média geral: " + mediaNotas);
-
-        return true;
     }
 
     public String getGabarito(){

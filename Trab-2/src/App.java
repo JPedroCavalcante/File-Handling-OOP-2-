@@ -102,7 +102,7 @@ public class App {
                             }
 
                             prova = ma.lerProva(disciplina + "ResultadoNotas");
-
+                            
                             System.out.println("Notas em ordem decrescente de nota.");
                             for(int i=0; i < prova.size(); i++){
                                 System.out.println(prova.get(i));
