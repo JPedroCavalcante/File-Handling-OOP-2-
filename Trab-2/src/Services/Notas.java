@@ -10,7 +10,6 @@ public class Notas extends Disciplina {
     private String gabarito;
     private String nomeAluno;
     private ManipulacaoArquivo arquivos;
-    //public static ArrayList<String> todasDisciplinas = new ArrayList<String>();
 
     public Notas(String disciplina){
         arquivos = new ManipulacaoArquivo();
