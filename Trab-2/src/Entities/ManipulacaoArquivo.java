@@ -21,7 +21,7 @@ public class ManipulacaoArquivo {
         return diretorio.mkdir();
     }
 
-    public void escreverConteudo(String gabarito, String nomeAluno, String disciplina) {
+    public boolean escreverConteudo(String gabarito, String nomeAluno, String disciplina) {
         FileWriter fw;
         try {
             fw = new FileWriter("./src/Provas/" + disciplina + ".txt", true);
@@ -30,11 +30,14 @@ public class ManipulacaoArquivo {
             bw.newLine();
             bw.close();
             fw.close();
+            return true;
         } catch(IOException e) {
             e.printStackTrace();
         } catch(Exception e){
             System.out.println("Ops... aconteceu algum erro.");
         }
+
+        return false;
     }
 
     public String lerConteudo(String caminho){
@@ -48,6 +51,8 @@ public class ManipulacaoArquivo {
             fr.close();
         } catch(IOException e) {
             System.out.println("Arquivo não encontrado!");
+        } catch(Exception e){
+            System.out.println("Ops... aconteceu algum erro interno.");
         }
         
         return resposta;
@@ -68,6 +73,8 @@ public class ManipulacaoArquivo {
             fr.close();
         } catch(IOException e) {
             System.out.println("Arquivo não encontrado!");
+        } catch(Exception e){
+            System.out.println("Ops... aconteceu algum erro interno.");
         }
 
         return prova;
