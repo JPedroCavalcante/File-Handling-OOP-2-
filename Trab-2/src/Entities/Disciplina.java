@@ -3,11 +3,7 @@ package Entities;
 import java.util.ArrayList;
 
 public abstract class Disciplina {
-    protected ArrayList<String> disciplinas;
-
-    public Disciplina(){
-        disciplinas = new ArrayList<String>();
-    }
+    protected static ArrayList<String> disciplinas = new ArrayList<String>();
 
     public boolean adicionarDisciplina(String disciplina){
         for(int i=0; i < disciplinas.size(); i++)
